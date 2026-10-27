@@ -1,0 +1,34 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Fira Code', monospace;
+}
+
+.graph-paper {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  isolation: isolate;
+
+  background-color: #171717;
+  overflow: hidden;
+}
+
+.graph-paper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background-image:
+    linear-gradient(rgba(163, 163, 163, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(163, 163, 163, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(163, 163, 163, 0.12) 1px, transparent 1px);
+  background-size: 100% 36px, 36px 100%, 1px 100%;
+  background-repeat: repeat, repeat, no-repeat;
+  background-position: 0 0, 0 0, 56px 0;
+
+  pointer-events: none;
+}
